@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<VBox spacing="20" alignment="CENTER" style="-fx-background-color: linear-gradient(to bottom, #2c3e50, #34495e); -fx-padding: 40;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.restaurant.restaurantapp.LoginController">
+
+    <!-- Logo -->
+    <ImageView fx:id="logoImageView" fitHeight="100" fitWidth="100" preserveRatio="true">
+        <Image url="https://via.placeholder.com/100?text=RESTAURANT"/>
+    </ImageView>
+
+    <!-- Title -->
+    <Label text="RESTAURANT ORDER SYSTEM" style="-fx-font-size: 24; -fx-font-weight: bold; -fx-text-fill: white;"/>
+    <Label text="Welcome Back!" style="-fx-font-size: 14; -fx-text-fill: #ecf0f1;"/>
+
+    <!-- Login Form -->
+    <VBox spacing="15" style="-fx-border-color: #ecf0f1; -fx-border-width: 2; -fx-padding: 30; -fx-background-color: #2c3e50;">
+        <Label text="Username:" style="-fx-text-fill: white; -fx-font-size: 12;"/>
+        <TextField fx:id="usernameField" promptText="Enter username" style="-fx-padding: 10; -fx-font-size: 12;"/>
+
+        <Label text="Password:" style="-fx-text-fill: white; -fx-font-size: 12;"/>
+        <PasswordField fx:id="passwordField" promptText="Enter password" style="-fx-padding: 10; -fx-font-size: 12;"/>
+    </VBox>
+
+    <!-- Buttons -->
+    <HBox spacing="20" alignment="CENTER">
+        <Button fx:id="loginBtn" text="🔓 Login" style="-fx-padding: 12 40; -fx-font-size: 14; -fx-font-weight: bold; -fx-background-color: #27ae60; -fx-text-fill: white; -fx-cursor: hand;"/>
+        <Button fx:id="exitBtn" text="❌ Exit" style="-fx-padding: 12 40; -fx-font-size: 14; -fx-font-weight: bold; -fx-background-color: #e74c3c; -fx-text-fill: white; -fx-cursor: hand;"/>
+    </HBox>
+
+    <Label text="Demo: username: admin | password: 1234" style="-fx-font-size: 10; -fx-text-fill: #95a5a6;"/>
+</VBox>

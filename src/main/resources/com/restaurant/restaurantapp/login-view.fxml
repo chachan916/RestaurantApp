@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<VBox spacing="20" alignment="CENTER" style="-fx-background-color: linear-gradient(to bottom, #1a1a2e, #16213e, #0f3460); -fx-padding: 40;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.restaurant.restaurantapp.LoginController">
+
+    <!-- Logo -->
+    <ImageView fitHeight="150" fitWidth="150" preserveRatio="true">
+        <Image url="@/images/raven-logo.webp"/>
+    </ImageView>
+
+    <!-- Title -->
+    <Label text="🐦 LA FAMIGLIA DI RAVEN 🐦" style="-fx-font-size: 26; -fx-font-weight: bold; -fx-text-fill: #e0d5ff;"/>
+    <Label text="Italian &amp; Basotho Cuisine" style="-fx-font-size: 14; -fx-text-fill: #b8b8d1; -fx-font-style: italic; -fx-font-weight: bold;"/>
+    <Label text="Benvenuti! Welcome!" style="-fx-font-size: 12; -fx-text-fill: #c0c0c0;"/>
+
+    <!-- Login Form -->
+    <VBox spacing="15" style="-fx-border-color: #7851a9; -fx-border-width: 3; -fx-padding: 30; -fx-background-color: #0f1419;">
+        <Label text="👤 Username:" style="-fx-text-fill: #b8b8d1; -fx-font-size: 13; -fx-font-weight: bold;"/>
+        <TextField fx:id="usernameField" promptText="Enter your username" style="-fx-padding: 10; -fx-font-size: 12; -fx-control-inner-background: #1a1a2e; -fx-text-fill: #e0d5ff; -fx-prompt-text-fill: #7851a9; -fx-border-color: #7851a9; -fx-border-width: 1; -fx-border-radius: 5;"/>
+
+        <Label text="🔐 Password:" style="-fx-text-fill: #b8b8d1; -fx-font-size: 13; -fx-font-weight: bold;"/>
+        <PasswordField fx:id="passwordField" promptText="Enter your password" style="-fx-padding: 10; -fx-font-size: 12; -fx-control-inner-background: #1a1a2e; -fx-text-fill: #e0d5ff; -fx-prompt-text-fill: #7851a9; -fx-border-color: #7851a9; -fx-border-width: 1; -fx-border-radius: 5;"/>
+    </VBox>
+
+    <!-- Buttons -->
+    <HBox spacing="20" alignment="CENTER">
+        <Button fx:id="loginBtn" text="🔓 LOGIN" style="-fx-padding: 12 40; -fx-font-size: 14; -fx-font-weight: bold; -fx-background-color: #7851a9; -fx-text-fill: #e0d5ff; -fx-cursor: hand; -fx-border-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(120, 81, 169, 0.8), 10, 0, 0, 0);"/>
+        <Button fx:id="signupBtn" text="📝 SIGN UP" style="-fx-padding: 12 40; -fx-font-size: 14; -fx-font-weight: bold; -fx-background-color: #5a4a7a; -fx-text-fill: #b8b8d1; -fx-cursor: hand; -fx-border-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(90, 74, 122, 0.8), 10, 0, 0, 0);"/>
+        <Button fx:id="exitBtn" text="❌ EXIT" style="-fx-padding: 12 40; -fx-font-size: 14; -fx-font-weight: bold; -fx-background-color: #2d2d44; -fx-text-fill: #c0c0c0; -fx-cursor: hand; -fx-border-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(45, 45, 68, 0.8), 10, 0, 0, 0);"/>
+    </HBox>
+</VBox>

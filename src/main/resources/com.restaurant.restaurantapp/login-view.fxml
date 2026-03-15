@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.restaurant.restaurantapp.LoginController">
+
+    <children>
+
+        <VBox alignment="CENTER" spacing="15"
+              AnchorPane.topAnchor="0"
+              AnchorPane.bottomAnchor="0"
+              AnchorPane.leftAnchor="0"
+              AnchorPane.rightAnchor="0">
+
+            <padding>
+                <Insets top="20"/>
+            </padding>
+
+            <!-- LOGO -->
+            <ImageView fitHeight="90" preserveRatio="true">
+                <image>
+                    <Image url="@/images/image1.png"/>
+                </image>
+            </ImageView>
+
+            <!-- TITLE -->
+            <Label text="Restaurant Login"
+                   style="-fx-font-size:20px; -fx-font-weight:bold;"/>
+
+            <!-- USERNAME -->
+            <TextField fx:id="usernameField"
+                       promptText="Username"
+                       maxWidth="250"/>
+
+            <!-- PASSWORD -->
+            <PasswordField fx:id="passwordField"
+                           promptText="Password"
+                           maxWidth="250"/>
+
+            <!-- LOGIN BUTTON -->
+            <Button text="Login"
+                    onAction="#handleLogin"
+                    maxWidth="250"/>
+
+            <!-- REGISTER BUTTON -->
+            <Button text="Register"
+                    onAction="#goToRegister"
+                    maxWidth="250"/>
+
+            <Label fx:id="messageLabel"
+                   textFill="red"/>
+
+        </VBox>
+
+    </children>
+
+</AnchorPane>

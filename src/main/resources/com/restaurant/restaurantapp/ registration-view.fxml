@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="20" alignment="CENTER" style="-fx-background-color: linear-gradient(to bottom, #1a1a2e, #16213e, #0f3460); -fx-padding: 40;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.restaurant.restaurantapp.RegistrationController">
+
+    <!-- Logo -->
+    <ImageView fitHeight="120" fitWidth="120" preserveRatio="true">
+        <Image url="@/images/download.jpg"/>
+    </ImageView>
+
+    <!-- Title -->
+    <Label text="🐦 LA FAMIGLIA DI RAVEN 🐦" style="-fx-font-size: 26; -fx-font-weight: bold; -fx-text-fill: #e0d5ff;"/>
+    <Label text="Create Your Account" style="-fx-font-size: 14; -fx-text-fill: #7851a9; -fx-font-weight: bold;"/>
+
+    <!-- Registration Form -->
+    <VBox spacing="15" style="-fx-border-color: #7851a9; -fx-border-width: 3; -fx-padding: 30; -fx-background-color: #0f1419;">
+        <Label text="👤 Username:" style="-fx-text-fill: #b8b8d1; -fx-font-size: 13; -fx-font-weight: bold;"/>
+        <TextField fx:id="usernameField" promptText="Choose username" style="-fx-padding: 10; -fx-control-inner-background: #1a1a2e; -fx-text-fill: #e0d5ff; -fx-border-color: #7851a9;"/>
+
+        <Label text="🔐 Password:" style="-fx-text-fill: #b8b8d1; -fx-font-size: 13; -fx-font-weight: bold;"/>
+        <PasswordField fx:id="passwordField" promptText="Enter password" style="-fx-padding: 10; -fx-control-inner-background: #1a1a2e; -fx-text-fill: #e0d5ff; -fx-border-color: #7851a9;"/>
+
+        <Label text="🔐 Confirm Password:" style="-fx-text-fill: #b8b8d1; -fx-font-size: 13; -fx-font-weight: bold;"/>
+        <PasswordField fx:id="confirmPasswordField" promptText="Confirm password" style="-fx-padding: 10; -fx-control-inner-background: #1a1a2e; -fx-text-fill: #e0d5ff; -fx-border-color: #7851a9;"/>
+    </VBox>
+
+    <!-- Buttons -->
+    <HBox spacing="20" alignment="CENTER">
+        <Button fx:id="registerBtn" text="✅ CREATE ACCOUNT" style="-fx-padding: 12 30; -fx-background-color: #7851a9; -fx-text-fill: #e0d5ff; -fx-cursor: hand;"/>
+        <Button fx:id="backBtn" text="⬅️ BACK TO LOGIN" style="-fx-padding: 12 30; -fx-background-color: #5a4a7a; -fx-text-fill: #b8b8d1; -fx-cursor: hand;"/>
+    </HBox>
+</VBox>
