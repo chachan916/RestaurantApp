@@ -6,15 +6,11 @@ import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-
 import java.io.IOException;
 
 public class LoginController {
@@ -36,19 +32,17 @@ public class LoginController {
         fade.setToValue(1);
         fade.play();
 
-        if (loginCard != null) {
-            loginCard.setOpacity(0);
-            loginCard.setTranslateY(40);
+        loginCard.setOpacity(0);
+        loginCard.setTranslateY(40);
 
-            TranslateTransition slide = new TranslateTransition(Duration.seconds(0.9), loginCard);
-            slide.setToY(0);
+        TranslateTransition slide = new TranslateTransition(Duration.seconds(0.9), loginCard);
+        slide.setToY(0);
 
-            FadeTransition cardFade = new FadeTransition(Duration.seconds(0.9), loginCard);
-            cardFade.setToValue(1);
+        FadeTransition cardFade = new FadeTransition(Duration.seconds(0.9), loginCard);
+        cardFade.setToValue(1);
 
-            slide.play();
-            cardFade.play();
-        }
+        slide.play();
+        cardFade.play();
 
         addHover(loginBtn);
         addHover(signupBtn);
@@ -61,16 +55,11 @@ public class LoginController {
     private void addHover(Button btn) {
         btn.setOnMouseEntered(e -> {
             ScaleTransition s = new ScaleTransition(Duration.millis(150), btn);
-            s.setToX(1.07);
-            s.setToY(1.07);
-            s.play();
+            s.setToX(1.07); s.setToY(1.07); s.play();
         });
-
         btn.setOnMouseExited(e -> {
             ScaleTransition s = new ScaleTransition(Duration.millis(150), btn);
-            s.setToX(1);
-            s.setToY(1);
-            s.play();
+            s.setToX(1); s.setToY(1); s.play();
         });
     }
 
@@ -79,47 +68,44 @@ public class LoginController {
         String username = usernameField.getText().trim();
         String password = passwordField.getText().trim();
 
-        if(username.isEmpty() || password.isEmpty()){
-            showAlert("Validation Error","Please enter both username and password.");
+        if (username.isEmpty() || password.isEmpty()) {
+            showAlert("Validation Error", "Please enter both username and password.");
             return;
         }
 
-        if(UserDatabase.loginUser(username,password)){
-            try{
+        if (UserDatabase.loginUser(username, password)) {
+            try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("main-view.fxml"));
-                Scene scene = new Scene(loader.load(),860,680);
-
+                Scene scene = new Scene(loader.load(), 980, 700);
                 Stage stage = (Stage) loginBtn.getScene().getWindow();
                 stage.setTitle("La Famiglia Di Raven | Welcome " + username);
+                stage.setResizable(true);
                 stage.setScene(scene);
                 stage.show();
-
-            }catch(IOException ex){
-                showAlert("Error","Failed to load main screen.");
+            } catch (IOException ex) {
+                showAlert("Error", "Failed to load main screen.");
             }
-        }else{
+        } else {
             showAlert("Invalid Credentials", "Incorrect username or password.");
             passwordField.clear();
             usernameField.requestFocus();
         }
     }
 
-    private void goToRegistration(){
-        try{
+    private void goToRegistration() {
+        try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("registration-view.fxml"));
-            Scene scene = new Scene(loader.load(),620,680);
-
+            Scene scene = new Scene(loader.load(), 650, 750);
             Stage stage = (Stage) signupBtn.getScene().getWindow();
             stage.setScene(scene);
             stage.setTitle("Create Account");
             stage.show();
-
-        }catch(IOException e){
-            showAlert("Error","Failed to load registration screen.");
+        } catch (IOException e) {
+            showAlert("Error", "Failed to load registration screen.");
         }
     }
 
-    private void showAlert(String title,String message){
+    private void showAlert(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(title);
         alert.setHeaderText(null);

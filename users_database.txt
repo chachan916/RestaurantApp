@@ -1,5 +1,6 @@
 retsepile:maka
 tsepang:lineo
+moko:2222
 admin:1234
 sebolelo:12345
 reitumetse:moon
