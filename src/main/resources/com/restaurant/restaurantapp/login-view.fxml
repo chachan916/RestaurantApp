@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+
 <VBox spacing="20" alignment="CENTER" style="-fx-background-color: linear-gradient(to bottom, #1a1a2e, #16213e, #0f3460); -fx-padding: 40;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.restaurant.restaurantapp.LoginController">
 
     <!-- Logo -->
@@ -12,17 +12,15 @@
         <Image url="@/images/image1.png"/>
     </ImageView>
 
-
     <!-- Title -->
     <Label text="🐦 LA FAMIGLIA DI RAVEN 🐦" style="-fx-font-size: 26; -fx-font-weight: bold; -fx-text-fill: #e0d5ff;"/>
     <Label text="Italian &amp; Basotho Cuisine" style="-fx-font-size: 14; -fx-text-fill: #b8b8d1; -fx-font-style: italic; -fx-font-weight: bold;"/>
     <Label text="Benvenuti! Welcome!" style="-fx-font-size: 12; -fx-text-fill: #c0c0c0;"/>
 
     <!-- Login Form -->
-    <VBox spacing="15" style="-fx-border-color: #7851a9; -fx-border-width: 3; -fx-padding: 30; -fx-background-color: #0f1419;">
+    <VBox fx:id="loginCard" spacing="15" style="-fx-border-color: #7851a9; -fx-border-width: 3; -fx-padding: 30; -fx-background-color: #0f1419;">
         <Label text="👤 Username:" style="-fx-text-fill: #b8b8d1; -fx-font-size: 13; -fx-font-weight: bold;"/>
         <TextField fx:id="usernameField" promptText="Enter your username" style="-fx-padding: 10; -fx-font-size: 12; -fx-control-inner-background: #1a1a2e; -fx-text-fill: #e0d5ff; -fx-prompt-text-fill: #7851a9; -fx-border-color: #7851a9; -fx-border-width: 1; -fx-border-radius: 5;"/>
-
         <Label text="🔐 Password:" style="-fx-text-fill: #b8b8d1; -fx-font-size: 13; -fx-font-weight: bold;"/>
         <PasswordField fx:id="passwordField" promptText="Enter your password" style="-fx-padding: 10; -fx-font-size: 12; -fx-control-inner-background: #1a1a2e; -fx-text-fill: #e0d5ff; -fx-prompt-text-fill: #7851a9; -fx-border-color: #7851a9; -fx-border-width: 1; -fx-border-radius: 5;"/>
     </VBox>
