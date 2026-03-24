@@ -19,7 +19,7 @@ public class RegistrationController {
 
     @FXML
     public void initialize() {
-        System.out.println("✅ Registration Controller Started");
+        System.out.println("Registration Controller Started");
 
         registerBtn.setOnAction(e -> handleRegistration());
         backBtn.setOnAction(e -> goBackToLogin());

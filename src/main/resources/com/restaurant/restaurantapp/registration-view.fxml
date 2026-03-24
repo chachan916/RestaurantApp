@@ -6,24 +6,24 @@
 <VBox spacing="20" alignment="CENTER" style="-fx-background-color: linear-gradient(to bottom, #1a1a2e, #16213e, #0f3460); -fx-padding: 40;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.restaurant.restaurantapp.RegistrationController">
 
     <!-- Title -->
-    <Label text="📝 CREATE ACCOUNT" style="-fx-font-size: 26; -fx-font-weight: bold; -fx-text-fill: #e0d5ff;"/>
+    <Label text="CREATE ACCOUNT" style="-fx-font-size: 26; -fx-font-weight: bold; -fx-text-fill: #e0d5ff;"/>
     <Label text="Join La Famiglia Di Raven" style="-fx-font-size: 14; -fx-text-fill: #b8b8d1; -fx-font-style: italic;"/>
 
     <!-- Registration Form -->
     <VBox fx:id="registrationCard" spacing="15" style="-fx-border-color: #7851a9; -fx-border-width: 3; -fx-padding: 30; -fx-background-color: #0f1419;">
-        <Label text="👤 Username:" style="-fx-text-fill: #b8b8d1; -fx-font-size: 13; -fx-font-weight: bold;"/>
+        <Label text="Username:" style="-fx-text-fill: #b8b8d1; -fx-font-size: 13; -fx-font-weight: bold;"/>
         <TextField fx:id="usernameField" promptText="Choose a username" style="-fx-padding: 10; -fx-font-size: 12; -fx-control-inner-background: #1a1a2e; -fx-text-fill: #e0d5ff; -fx-prompt-text-fill: #7851a9; -fx-border-color: #7851a9; -fx-border-width: 1; -fx-border-radius: 5;"/>
 
-        <Label text="🔐 Password:" style="-fx-text-fill: #b8b8d1; -fx-font-size: 13; -fx-font-weight: bold;"/>
+        <Label text="Password:" style="-fx-text-fill: #b8b8d1; -fx-font-size: 13; -fx-font-weight: bold;"/>
         <PasswordField fx:id="passwordField" promptText="Create a password" style="-fx-padding: 10; -fx-font-size: 12; -fx-control-inner-background: #1a1a2e; -fx-text-fill: #e0d5ff; -fx-prompt-text-fill: #7851a9; -fx-border-color: #7851a9; -fx-border-width: 1; -fx-border-radius: 5;"/>
 
-        <Label text="🔐 Confirm Password:" style="-fx-text-fill: #b8b8d1; -fx-font-size: 13; -fx-font-weight: bold;"/>
+        <Label text="Confirm Password:" style="-fx-text-fill: #b8b8d1; -fx-font-size: 13; -fx-font-weight: bold;"/>
         <PasswordField fx:id="confirmPasswordField" promptText="Confirm your password" style="-fx-padding: 10; -fx-font-size: 12; -fx-control-inner-background: #1a1a2e; -fx-text-fill: #e0d5ff; -fx-prompt-text-fill: #7851a9; -fx-border-color: #7851a9; -fx-border-width: 1; -fx-border-radius: 5;"/>
     </VBox>
 
     <!-- Buttons -->
     <HBox spacing="20" alignment="CENTER">
-        <Button fx:id="registerBtn" text="✅ REGISTER" style="-fx-padding: 12 40; -fx-font-size: 14; -fx-font-weight: bold; -fx-background-color: #7851a9; -fx-text-fill: #e0d5ff; -fx-cursor: hand; -fx-border-radius: 5;"/>
-        <Button fx:id="backBtn" text="⬅ BACK" style="-fx-padding: 12 40; -fx-font-size: 14; -fx-font-weight: bold; -fx-background-color: #2d2d44; -fx-text-fill: #c0c0c0; -fx-cursor: hand; -fx-border-radius: 5;"/>
+        <Button fx:id="registerBtn" text="REGISTER" style="-fx-padding: 12 40; -fx-font-size: 14; -fx-font-weight: bold; -fx-background-color: #7851a9; -fx-text-fill: #e0d5ff; -fx-cursor: hand; -fx-border-radius: 5;"/>
+        <Button fx:id="backBtn" text="BACK" style="-fx-padding: 12 40; -fx-font-size: 14; -fx-font-weight: bold; -fx-background-color: #2d2d44; -fx-text-fill: #c0c0c0; -fx-cursor: hand; -fx-border-radius: 5;"/>
     </HBox>
 </VBox>

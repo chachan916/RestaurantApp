@@ -10,6 +10,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -18,6 +19,7 @@ import java.io.IOException;
 
 public class LoginController {
 
+    public ImageView logoImageView;
     @FXML private VBox rootPane;
     @FXML private VBox loginCard;
     @FXML private TextField usernameField;
@@ -34,7 +36,6 @@ public class LoginController {
         fade.setToValue(1);
         fade.play();
 
-        // Add null check for loginCard
         if (loginCard != null) {
             loginCard.setOpacity(0);
             loginCard.setTranslateY(40);
@@ -58,7 +59,6 @@ public class LoginController {
     }
 
     private void addHover(Button btn) {
-
         btn.setOnMouseEntered(e -> {
             ScaleTransition s = new ScaleTransition(Duration.millis(150), btn);
             s.setToX(1.07);
@@ -76,7 +76,6 @@ public class LoginController {
 
     @FXML
     private void handleLogin() {
-
         String username = usernameField.getText().trim();
         String password = passwordField.getText().trim();
 
@@ -86,9 +85,7 @@ public class LoginController {
         }
 
         if(UserDatabase.loginUser(username,password)){
-
             try{
-
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("main-view.fxml"));
                 Scene scene = new Scene(loader.load(),860,680);
 
@@ -100,21 +97,15 @@ public class LoginController {
             }catch(IOException ex){
                 showAlert("Error","Failed to load main screen.");
             }
-
         }else{
-
-            showAlert("Invalid Credentials",
-                    "Incorrect username or password.");
-
+            showAlert("Invalid Credentials", "Incorrect username or password.");
             passwordField.clear();
             usernameField.requestFocus();
         }
     }
 
     private void goToRegistration(){
-
         try{
-
             FXMLLoader loader = new FXMLLoader(getClass().getResource("registration-view.fxml"));
             Scene scene = new Scene(loader.load(),620,680);
 
@@ -124,13 +115,11 @@ public class LoginController {
             stage.show();
 
         }catch(IOException e){
-
             showAlert("Error","Failed to load registration screen.");
         }
     }
 
     private void showAlert(String title,String message){
-
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(title);
         alert.setHeaderText(null);

@@ -49,5 +49,4 @@ public class UserDatabase {
         saveAllUsersToFile();
         return true;
     }
-
 }

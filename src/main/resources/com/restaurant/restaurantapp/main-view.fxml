@@ -2,8 +2,140 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
 
-<VBox spacing="10" alignment="CENTER" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.restaurant.restaurantapp.RestaurantController">
-    <Label text="Restaurant POS System" style="-fx-font-size: 20;"/>
-    <Button fx:id="exitBtn" text="Exit"/>
-</VBox>
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.restaurant.restaurantapp.RestaurantController"
+            style="-fx-background-color: linear-gradient(to bottom, #1a1a2e, #16213e, #0f3460);">
+
+    <!-- TOP: Header -->
+    <top>
+        <VBox alignment="CENTER" spacing="5" style="-fx-padding: 15;">
+            <Label text="LA FAMIGLIA DI RAVEN" style="-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: #ffd700;"/>
+            <Label text="Point of Sale System" style="-fx-font-size: 14; -fx-text-fill: #b8b8d1; -fx-font-style: italic;"/>
+        </VBox>
+    </top>
+
+    <!-- CENTER: Main Content -->
+    <center>
+        <HBox spacing="15" style="-fx-padding: 15;">
+
+            <!-- LEFT COLUMN: Menu Selection -->
+            <VBox spacing="10" style="-fx-border-color: #7851a9; -fx-border-width: 2; -fx-padding: 15; -fx-background-color: #0f1419; -fx-min-width: 320;">
+                <Label text="MENU SELECTION" style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #ffd700;"/>
+
+                <!-- Tab Pane for Menu Types -->
+                <TabPane fx:id="menuTabs" style="-fx-background-color: #1a1a2e;">
+
+                    <!-- Basotho Menu Tab -->
+                    <Tab text="Basotho Menu" closable="false">
+                        <VBox spacing="10" style="-fx-padding: 10; -fx-background-color: #1a1a2e;">
+
+                            <!-- Dinner Section -->
+                            <Label text="DINNER" style="-fx-font-size: 13; -fx-font-weight: bold; -fx-text-fill: #7851a9;"/>
+                            <CheckBox fx:id="cb1" text="Papa le Moroho - M45.00" style="-fx-text-fill: #e0d5ff;"/>
+                            <CheckBox fx:id="cb2" text="Lijo tsa Setho - M55.00" style="-fx-text-fill: #e0d5ff;"/>
+                            <CheckBox fx:id="cb3" text="Nama ea Khomo - M75.00" style="-fx-text-fill: #e0d5ff;"/>
+
+                            <Separator style="-fx-background-color: #7851a9;"/>
+
+                            <!-- Dessert Section -->
+                            <Label text="DESSERT" style="-fx-font-size: 13; -fx-font-weight: bold; -fx-text-fill: #7851a9;"/>
+                            <RadioButton fx:id="rb1" text="Makoenya - M25.00" style="-fx-text-fill: #e0d5ff;"/>
+                            <RadioButton fx:id="rb2" text="Likhobe - M30.00" style="-fx-text-fill: #e0d5ff;"/>
+                            <RadioButton fx:id="rb3" text="Motoho - M20.00" style="-fx-text-fill: #e0d5ff;"/>
+
+                            <Separator style="-fx-background-color: #7851a9;"/>
+
+                            <!-- Drinks Section -->
+                            <Label text="DRINKS" style="-fx-font-size: 13; -fx-font-weight: bold; -fx-text-fill: #7851a9;"/>
+                            <ComboBox fx:id="drinksCombo1" promptText="Select a drink..." style="-fx-pref-width: 250; -fx-background-color: #1a1a2e;"/>
+                        </VBox>
+                    </Tab>
+
+                    <!-- Italian Menu Tab -->
+                    <Tab text="Italian Menu" closable="false">
+                        <VBox spacing="10" style="-fx-padding: 10; -fx-background-color: #1a1a2e;">
+
+                            <!-- Dinner Section -->
+                            <Label text="DINNER" style="-fx-font-size: 13; -fx-font-weight: bold; -fx-text-fill: #7851a9;"/>
+                            <CheckBox fx:id="cb4" text="Pasta Carbonara - M85.00" style="-fx-text-fill: #e0d5ff;"/>
+                            <CheckBox fx:id="cb5" text="Pizza Margherita - M95.00" style="-fx-text-fill: #e0d5ff;"/>
+                            <CheckBox fx:id="cb6" text="Risotto - M110.00" style="-fx-text-fill: #e0d5ff;"/>
+
+                            <Separator style="-fx-background-color: #7851a9;"/>
+
+                            <!-- Dessert Section -->
+                            <Label text="DESSERT" style="-fx-font-size: 13; -fx-font-weight: bold; -fx-text-fill: #7851a9;"/>
+                            <RadioButton fx:id="rb4" text="Tiramisu - M45.00" style="-fx-text-fill: #e0d5ff;"/>
+                            <RadioButton fx:id="rb5" text="Panna Cotta - M40.00" style="-fx-text-fill: #e0d5ff;"/>
+                            <RadioButton fx:id="rb6" text="Gelato - M35.00" style="-fx-text-fill: #e0d5ff;"/>
+
+                            <Separator style="-fx-background-color: #7851a9;"/>
+
+                            <!-- Drinks Section -->
+                            <Label text="DRINKS" style="-fx-font-size: 13; -fx-font-weight: bold; -fx-text-fill: #7851a9;"/>
+                            <ComboBox fx:id="drinksCombo2" promptText="Select a drink..." style="-fx-pref-width: 250; -fx-background-color: #1a1a2e;"/>
+                        </VBox>
+                    </Tab>
+                </TabPane>
+            </VBox>
+
+            <!-- CENTER COLUMN: Order Summary -->
+            <VBox spacing="15" style="-fx-border-color: #7851a9; -fx-border-width: 2; -fx-padding: 15; -fx-background-color: #0f1419; -fx-min-width: 220;">
+                <Label text="ORDER SUMMARY" style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #ffd700;"/>
+
+                <!-- Total Amount -->
+                <VBox spacing="5">
+                    <Label text="Total Amount:" style="-fx-text-fill: #b8b8d1; -fx-font-weight: bold;"/>
+                    <Label fx:id="totalLabel" text="M0.00" style="-fx-font-size: 24; -fx-font-weight: bold; -fx-text-fill: #00ff88;"/>
+                </VBox>
+
+                <Separator style="-fx-background-color: #7851a9;"/>
+
+                <!-- Cash Tendered -->
+                <VBox spacing="5">
+                    <Label text="Cash Tendered:" style="-fx-text-fill: #b8b8d1; -fx-font-weight: bold;"/>
+                    <TextField fx:id="cashPaidField" promptText="Enter amount..."
+                               style="-fx-padding: 10; -fx-font-size: 14; -fx-control-inner-background: #1a1a2e; -fx-text-fill: #e0d5ff; -fx-prompt-text-fill: #7851a9; -fx-border-color: #7851a9; -fx-border-width: 1;"/>
+                </VBox>
+
+                <!-- Change -->
+                <VBox spacing="5">
+                    <Label text="Change:" style="-fx-text-fill: #b8b8d1; -fx-font-weight: bold;"/>
+                    <Label fx:id="changeLabel" text="M0.00" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #ffd700;"/>
+                </VBox>
+
+                <Separator style="-fx-background-color: #7851a9;"/>
+
+                <!-- Transaction Time -->
+                <VBox spacing="5">
+                    <Label text="Transaction Time:" style="-fx-text-fill: #b8b8d1; -fx-font-weight: bold;"/>
+                    <Label fx:id="transactionTimeLabel" text="--:--:--" style="-fx-font-size: 14; -fx-text-fill: #e0d5ff;"/>
+                </VBox>
+            </VBox>
+
+            <!-- RIGHT COLUMN: Selected Items -->
+            <VBox spacing="10" style="-fx-border-color: #7851a9; -fx-border-width: 2; -fx-padding: 15; -fx-background-color: #0f1419; -fx-min-width: 220;">
+                <Label text="SELECTED ITEMS" style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #ffd700;"/>
+                <ListView fx:id="selectedItemsList" style="-fx-background-color: #1a1a2e; -fx-control-inner-background: #1a1a2e;" prefHeight="350"/>
+            </VBox>
+
+        </HBox>
+    </center>
+
+    <!-- BOTTOM: Action Buttons -->
+    <bottom>
+        <HBox spacing="20" alignment="CENTER" style="-fx-padding: 20; -fx-background-color: #0f1419;">
+            <Button fx:id="totalBtn" text="SHOW TOTAL"
+                    style="-fx-padding: 15 30; -fx-font-size: 14; -fx-font-weight: bold; -fx-background-color: #28a745; -fx-text-fill: white; -fx-cursor: hand;"/>
+            <Button fx:id="changeBtn" text="CALCULATE CHANGE"
+                    style="-fx-padding: 15 30; -fx-font-size: 14; -fx-font-weight: bold; -fx-background-color: #7851a9; -fx-text-fill: white; -fx-cursor: hand;"/>
+            <Button fx:id="resetBtn" text="RESET"
+                    style="-fx-padding: 15 30; -fx-font-size: 14; -fx-font-weight: bold; -fx-background-color: #ffc107; -fx-text-fill: #1a1a2e; -fx-cursor: hand;"/>
+            <Button fx:id="exitBtn" text="EXIT"
+                    style="-fx-padding: 15 30; -fx-font-size: 14; -fx-font-weight: bold; -fx-background-color: #dc3545; -fx-text-fill: white; -fx-cursor: hand;"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>
