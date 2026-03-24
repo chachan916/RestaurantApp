@@ -6,8 +6,10 @@ import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
-import javafx.scene.image.ImageView;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -16,7 +18,6 @@ import java.io.IOException;
 
 public class LoginController {
 
-    @FXML private ImageView logoImageView;
     @FXML private VBox rootPane;
     @FXML private VBox loginCard;
     @FXML private TextField usernameField;
@@ -33,17 +34,20 @@ public class LoginController {
         fade.setToValue(1);
         fade.play();
 
-        loginCard.setOpacity(0);
-        loginCard.setTranslateY(40);
+        // Add null check for loginCard
+        if (loginCard != null) {
+            loginCard.setOpacity(0);
+            loginCard.setTranslateY(40);
 
-        TranslateTransition slide = new TranslateTransition(Duration.seconds(0.9), loginCard);
-        slide.setToY(0);
+            TranslateTransition slide = new TranslateTransition(Duration.seconds(0.9), loginCard);
+            slide.setToY(0);
 
-        FadeTransition cardFade = new FadeTransition(Duration.seconds(0.9), loginCard);
-        cardFade.setToValue(1);
+            FadeTransition cardFade = new FadeTransition(Duration.seconds(0.9), loginCard);
+            cardFade.setToValue(1);
 
-        slide.play();
-        cardFade.play();
+            slide.play();
+            cardFade.play();
+        }
 
         addHover(loginBtn);
         addHover(signupBtn);
@@ -70,6 +74,7 @@ public class LoginController {
         });
     }
 
+    @FXML
     private void handleLogin() {
 
         String username = usernameField.getText().trim();
@@ -131,5 +136,8 @@ public class LoginController {
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
+    }
+
+    public void goToRegister() {
     }
 }

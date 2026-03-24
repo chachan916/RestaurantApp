@@ -50,6 +50,4 @@ public class UserDatabase {
         return true;
     }
 
-    public static boolean userExists(String username) { return users.containsKey(username); }
-    public static int getUserCount() { return users.size(); }
 }
