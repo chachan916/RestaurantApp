@@ -10,7 +10,7 @@
     <!-- Logo -->
     <ImageView fitHeight="150" fitWidth="150" preserveRatio="true">
         <Image url="@/images/image1.png"/>
-    </ImageView>cd C:\Users\Raven\IdeaProjects\RestaurantApp
+    </ImageView>
 
 
     <!-- Title -->
